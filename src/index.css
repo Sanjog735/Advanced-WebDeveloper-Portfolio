@@ -1,13 +1,86 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::after,
+*::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Calibre";
+  src: url("../src/fonts/CalibreBlack.otf") format("otf");
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Calibre", sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+.scrollbar-thumb {
+  background: #000 !important;
+  width: 12px !important;
+  border-radius: 0 !important;
+}
+
+.scrollbar-track-y {
+  width: 12px !important;
+  background: transparent !important;
+}
+
+@keyframes profile-anim {
+  0% {
+    border-radius: 60% 40% 30% 70% /60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% /50% 60% 30% 60%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% /60% 30% 70% 40%;
+  }
+}
+
+@keyframes wheel {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(3.75rem);
+  }
+}
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.brdr {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem 1rem;
 }
